@@ -1,0 +1,49 @@
+# Crear un inicio de sesión que solicite el usuario y la contraseña del
+# usuario
+import re
+
+while True:
+
+    error=0
+
+ 
+
+    usuario=input("Nombre de usuario: ")
+
+    contraseña1=input("contraseña: ")
+
+    contraseña2=input("repite contraseña: ")
+
+ 
+
+    if len(usuario)<8 or len(usuario)>12:
+
+        print("la longitud del usuario no es correcta")
+
+        error=1
+
+    if len(contraseña1)<10:
+
+        print("la longitud de la contraseña no es correcta")
+
+        error=1
+
+    if not re.search('[0-9]',contraseña1):
+
+        print("la contraseña tiene que tener al menos un numero")
+
+        error=1
+
+    if contraseña1!=contraseña2:
+
+        print("las contraseñas no son iguales")
+
+        error=1
+
+ 
+
+    if error==0:
+
+        print("OK")
+
+        break
